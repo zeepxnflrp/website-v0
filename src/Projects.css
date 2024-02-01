@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Optional: specific top and bottom padding/margin */
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/* Existing float animation for "My Work" */
+@keyframes floatAnimation {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+/* New slide-in animation for GitHub projects */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply float animation to the title */
+.title-animate {
+    animation: floatAnimation 2s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Initial state for project items */
+.project-animate {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Slide-in animation applied when in view */
+.project-animate.in-view {
+    animation: slideInFromLeft 2s ease forwards;
+}
+
+
+h1, ul {
+    margin: 0;
+    padding: 0;
+}

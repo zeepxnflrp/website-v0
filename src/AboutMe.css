@@ -1,4 +1,30 @@
-.App {
-    text-align: center;
+/* aboutme.css */
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+@keyframes floatAnimation {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+
+.animate-text {
+    opacity: 0; /* Initially hide the text */
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.animate-text.in-view {
+    animation: floatAnimation 2s ease forwards;
+}

@@ -92,6 +92,36 @@ header h1 {
   transform: rotate(330deg);     
 }
 
+.heart1-svg {
+  position: absolute; 
+  top: 600px;            
+  right: 50px;         
+  width: 150px;       
+  height: auto;      
+  z-index: 10;  
+  transform: rotate(10deg);     
+}
+
+.stemmed_flower-svg {
+  position: absolute; 
+  top: 1457px;            
+  right: 1400px;         
+  width: 100px;       
+  height: auto;      
+  z-index: 10;  
+  transform: rotate(0deg);     
+}
+
+.lamppost-svg {
+  position: absolute; 
+  top: 2870px;            
+  right: 1250px;         
+  width: 250px;       
+  height: auto;      
+  z-index: 10;  
+  transform: rotate(0deg);     
+}
+
 .center-content {
   display: flex;
   justify-content: center;

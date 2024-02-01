@@ -12,6 +12,7 @@
     "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-loaders": "^3.0.1",
     "react-scripts": "^5.0.1",
     "tailwindcss": "^3.4.0",
     "web-vitals": "^2.1.4"
@@ -41,6 +42,9 @@
     ]
   },
   "devDependencies": {
-    "daisyui": "^4.4.24"
+    "daisyui": "^4.4.24",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "webpack": "^5.90.0"
   }
 }

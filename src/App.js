@@ -5,6 +5,9 @@ import Experience from './Experience';
 import Contact from './Contact';
 import butterfly from './static/butterfly.svg';
 import laptop from './static/laptop.svg';
+import heart1 from './static/heart1.svg';
+import stemmed_flower from './static/stemmed_flower.svg';
+import lamppost from './static/lamppost.svg';
 import './App.css';
 
 const MyButterfly = () => (
@@ -19,6 +22,23 @@ const MyLaptop = () => (
   </div>
 );
 
+const MyHeart1 = () => (
+  <div>
+    <img src={heart1} alt="Heart SVG" className="heart1-svg" />
+  </div>
+);
+
+const MySFlower = () => (
+  <div>
+    <img src={stemmed_flower} alt="Stemmed Flower SVG" className="stemmed_flower-svg" />
+  </div>
+);
+
+const MyLamppost = () => (
+  <div>
+    <img src={lamppost} alt="Lamppost SVG" className="lamppost-svg" />
+  </div>
+);
 
 function App() {
   return (
@@ -47,6 +67,9 @@ function App() {
           <Contact />
         </div>
         <MyLaptop />
+        <MyHeart1 />
+        <MySFlower />
+        <MyLamppost />
       </main>
     </div>
   );
