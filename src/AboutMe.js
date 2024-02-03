@@ -28,7 +28,7 @@ function AboutMe() {
                 <p className="text-base animate-text">
                     I am a 21 year old senior at NYU, hailing from India, majoring in Computer Science & Economics. I'm interested in web development, 
                     playing around with AI, and backend development. I mostly like working with Python and Javascript. When I'm not cooking something up, 
-                    I can be found playing Valorant, watching House MD, watching pro gameplay, or experimenting with my hair and makeup. :P 
+                    I can be found playing Valorant, watching House MD, watching pro gameplay, or experimenting with my hair and makeup.
                 </p>
             </div>
         </div>

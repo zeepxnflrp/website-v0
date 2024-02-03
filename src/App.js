@@ -32,7 +32,7 @@ function App() {
           <li>
             <a href="#about-me">
               <button className="hover:text-pink cursor-pointer">
-                About Me
+                &gt; whoami
               </button>
             </a>
           </li>
