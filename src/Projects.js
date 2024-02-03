@@ -35,11 +35,11 @@ function Projects() {
             <h1 className="text-4xl font-bold text-center title-animate">My Work</h1>
             <ul className="space-y-3">
                 {repos.map(repo => (
-                <a href={repo.html_url} key={repo.id} className="block border border-black p-4 bg-black rounded-md shadow text-center hover:bg-violet-950 project-animate">
+                <a href={repo.html_url} key={repo.id} className="block border border-gray-800 p-4 bg-black shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10 rounded-md text-center project-animate">
                     <li className="text-white">
                         <div className="flex items-center justify-center">
                             <h2 className="text-xl font-semibold">
-                                {repo.name} <FontAwesomeIcon icon={faGithub} />
+                                {repo.name} <FontAwesomeIcon icon={faGithub} style={{ color: '#ec4899' }} />
                             </h2>
                         </div>
                         <p className="text-sm">{repo.description}</p>

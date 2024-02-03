@@ -1,10 +1,23 @@
-import React from 'react';
+import React from "react";
 
 function Contact() {
   return (
     <div className="container">
-      <h1 className="text-4xl font-bold text-center mb-4">Contact</h1>
-      <p className="text-base text-center">Contact Form</p>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input
+          type="hidden"
+          name="access_key"
+          value="access_key"
+        ></input>
+
+        <input type="text" name="name" required></input>
+        <input type="email" name="email" required></input>
+        <textarea name="message" required></textarea>
+        <div class="h-captcha" data-captcha="true"></div>
+        <button type="submit">Submit Form</button>
+      </form>
+
+      <script src="https://web3forms.com/client/script.js" async defer></script>
     </div>
   );
 }

@@ -1,13 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 .App {
   text-align: center;
 }
 
+
 html {
   scroll-behavior: smooth;
+}
+
+.scroll-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-page {
+  width: 100%;
+  height: 100vh;
+  background-size:  cover;
+  scroll-snap-align: start;
 }
 
 /* .App-logo {
@@ -48,7 +66,7 @@ html {
 .navbar {
   position: relative;
   padding-top: 20px;
-  background-color: #000000;
+  background-color: #af1f75;
   overflow: hidden;
 }
 
@@ -64,12 +82,20 @@ html {
 } */
 
 body {
-  background-color: #d2caf3;
-  color: #000000; 
+  background-color: #000000;
+  color: #ea7cbe; 
+  font-family: "Chivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
 header h1 {
-  color: #000000;
+  color: #ea7cbe;
+  font-family: "Chivo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .butterfly-svg {
@@ -104,7 +130,7 @@ header h1 {
 
 .stemmed_flower-svg {
   position: absolute; 
-  top: 1457px;            
+  top: 2280px;            
   right: 1400px;         
   width: 100px;       
   height: auto;      
@@ -114,7 +140,7 @@ header h1 {
 
 .lamppost-svg {
   position: absolute; 
-  top: 2870px;            
+  top: 3700px;            
   right: 1250px;         
   width: 250px;       
   height: auto;      
