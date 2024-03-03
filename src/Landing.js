@@ -23,7 +23,7 @@ function Landing() {
     return (
         <div className="container mx-auto p-4">
             <h1 className="text-7xl font-bold text-center mb-4 animate-text">Welcome to Baani's Digital Universe!</h1>
-            <p className="text-2xl text-center animate-text">👩‍💻 Crafting Code & Conjuring Creativity ✨</p>
+            <p className="text-2xl text-center animate-text">Crafting Code & Conjuring Creativity</p>
         </div>
     );
 }

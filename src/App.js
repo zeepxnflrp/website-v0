@@ -70,7 +70,7 @@ function App() {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/baani-pasrija-84aa3216b/"
+              href="https://www.linkedin.com/in/baani-kaur-pasrija-84aa3216b/"
               target="_blank"
               rel="noopener noreferrer"
             >
