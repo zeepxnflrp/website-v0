@@ -1,5 +1,5 @@
-.container {
-    height: 100vh;
+.about-container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,4 +25,16 @@
 
 .animate-text.in-view {
     animation: floatAnimation 2s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+  .about-container h1 {
+    font-size: 1.5rem; 
+  }
+  .about-container p {
+    font-size: 0.9rem;
+  }
 }

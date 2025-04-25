@@ -1,9 +1,20 @@
 [
     {
+        "role": "Full Stack Software Developer",
+        "company": "Autism Technology Research Syndicate (AUTRS)",
+        "location": "Chesterbrook PA",
+        "duration": "Sep 2024 – Present",
+        "description": [
+            "Collaborated on the SEAL project, developing features for a teaching app aimed at improving curriculum accessibility for educators.",
+            "Implemented the interface for teachers to input curriculum, integrating it with existing backend systems to ensure seamless database updates.",
+            "Developed a backend page direction function to dynamically route users to the appropriate page based on input/output IDs, ensuring accurate display of associated curriculum content."
+        ]
+    },
+    {
         "role": "President",
         "company": "NYU Bridge & Spades",
         "location": "New York NY",
-        "duration": "May 2022 – Present",
+        "duration": "May 2022 – May 2024",
         "description": [
             "Managed a 1300-member club, overseeing budgeting, efficient venue coordination, engaging communication with members and e-board, and conflict resolution. ",
             "Also played a role in establishing partnerships with other student organizations to host large-scale social events, contributing to the club's overall impact and community engagement."
@@ -13,7 +24,7 @@
         "role": "Events Assistant",
         "company": "NYU Athletics",
         "location": "New York NY",
-        "duration": "Sep 2021 – Present",
+        "duration": "Sep 2021 – May 2023",
         "description": [
             "Managed logistics for large university-scale sporting events, including event setup, guest list management, and team structure maintenance. ",
             "Facilitated seamless integration of several new employees to the team, by onboarding and training them about established protocols and procedures."

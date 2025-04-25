@@ -1,12 +1,18 @@
 import React from "react";
 import experienceData from "./data/experience.json";
+import "./Experience.css";
 
 function Experience() {
   return (
     <div>
-      <section>
-        <div className="container my-20 mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-4 mt-20">My Experience</h1>
+      <section className="exp-container">
+        <div className="my-10 mx-auto px-4 h-full flex flex-col">
+          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 mt-10 md:mt-20">
+            My Experience </h1>
+          <div 
+            className="flex-1 overflow-y-auto"
+            style={{ maxHeight: "calc(100vh - 150px)" }} // adjust 150px to match header+padding height
+          >
           <div className={`grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4`}>
           {experienceData.map((exp, index) => (
             <div key={index} className="mb-2">
@@ -51,6 +57,7 @@ function Experience() {
             </div>
           ))}
           </div>
+        </div>
         </div>
       </section>
     </div>

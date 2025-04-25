@@ -8,8 +8,14 @@ function Projects() {
 
     useEffect(() => {
         fetch('https://api.github.com/users/zeepxnflrp/repos')
-            .then(response => response.json())
-            .then(data => setRepos(data));
+            .then(response => {
+                if (!response.ok) {
+                  throw new Error(`Error: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => setRepos(data))
+            .catch(error => console.error('Error fetching repos:', error));
     }, []);
 
     useEffect(() => {

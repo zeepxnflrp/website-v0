@@ -19,16 +19,16 @@ function AboutMe() {
     }, []);
 
     return (
-        <div className="container mx-auto p-4 flex flex-col md:flex-row items-center justify-center gap-4">
-            <div className="flex">
-                <img src={me} alt="Baani" className="max-w-full h-auto shadow-lg border border-solid border-pink-500 animate-text"/>
+        <div className="about-container mx-auto p-4 flex flex-col md:flex-row items-center justify-center gap-4">
+            <div className="flex justify-center">
+                <img src={me} alt="Baani" className="max-w-full h-auto shadow-lg border border-solid border-pink-500 animate-text w-1/2 md:w-3/4"/>
             </div>
-            <div className="text-center md:text-left p-8 pr-14">
-                <h1 className="text-4xl font-bold mb-4 animate-text">Who's Baani?</h1>
+            <div className="text-center md:text-left p-8 md:pr-14">
+                <h1 className="text-2xl md:text-4xl font-bold mb-4 animate-text">Who's Baani?</h1>
                 <p className="text-base animate-text">
-                    I am a 21 year old senior at NYU, hailing from India, majoring in Computer Science & Economics. I'm interested in web development, 
+                    I am a 22 year old software engineer, graduated from NYU. I'm interested in web development, 
                     playing around with AI, and backend development. I mostly like working with Python and Javascript. When I'm not cooking something up, 
-                    I can be found playing Valorant, watching House MD, watching pro gameplay, or experimenting with my hair and makeup.
+                    I can be found playing Valorant, watching some cringe drama or pro gameplay, or experimenting with my hair and makeup.
                 </p>
             </div>
         </div>
