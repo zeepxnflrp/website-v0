@@ -60,7 +60,7 @@ a:focus-visible {
   top: 0;
   z-index: 5;
   border-bottom: 1px solid rgba(243, 238, 242, 0.09);
-  background: rgba(5, 5, 8, 0.4);
+  background: rgba(5, 5, 8, 0.25);
   backdrop-filter: blur(18px);
 }
 

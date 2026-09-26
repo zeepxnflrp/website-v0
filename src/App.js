@@ -49,10 +49,11 @@ export function PortfolioRoutes() {
       />
       <header className="site-header">
         <div className="header-inner">
-          <Link className="wordmark" to={isHome ? "#home" : "/"} aria-label="baani, back to home">baani<span aria-hidden="true">*</span></Link>
+          <Link className="wordmark" to={isHome ? "#home" : "/"} aria-label="baani, back to home">baani<span aria-hidden="true">♡</span></Link>
           {isHome ? (
             <nav className={`site-nav${isHome ? "" : " secondary-nav"}`} aria-label="main navigation">
               <a href="#about">about</a>
+              <a href="#education">education</a>
               <a href="#experience">experience</a>
               <a href="#projects">projects</a>
               <a href="#skills">skills</a>

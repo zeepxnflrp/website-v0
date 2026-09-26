@@ -6,6 +6,7 @@ export const experiences = [
     sortDate: "2025-02",
     role: "backend developer (python) — insurance project",
     company: "Virim Infotech",
+    companyUrl: "https://viriminfotech.com/",
     dates: "feb 2025 — jun 2025",
     location: "indore, india · hybrid",
     description: [
@@ -19,6 +20,7 @@ export const experiences = [
     sortDate: "2024-08",
     role: "software engineer",
     company: "AUTRS — Autism Technology Research Syndicate",
+    companyUrl: "https://www.autrs.com/",
     dates: "aug 2024 — dec 2024",
     location: "chesterbrook, pa · virtual",
     description: [
@@ -32,6 +34,7 @@ export const experiences = [
     sortDate: "2022-05",
     role: "new york university bridge & spades",
     company: "New York University",
+    companyUrl: "https://www.nyu.edu/",
     dates: "may 2022 — may 2024",
     location: "new york, ny",
     roles: [
@@ -58,6 +61,7 @@ export const experiences = [
     sortDate: "2023-06",
     role: "robotic process automation intern",
     company: "Virim Infotech",
+    companyUrl: "https://viriminfotech.com/",
     dates: "jun 2023 — aug 2023",
     location: "india · on-site",
     description: [
@@ -71,6 +75,7 @@ export const experiences = [
     sortDate: "2021-09",
     role: "events assistant",
     company: "New York University",
+    companyUrl: "https://www.nyu.edu/",
     dates: "sep 2021 — may 2023",
     location: "new york, ny · on-site",
     description: [
@@ -83,6 +88,7 @@ export const experiences = [
     sortDate: "2019-08",
     role: "marketing intern",
     company: "Treasure Island Mall",
+    companyUrl: "https://www.nexusselecttrust.com/nexus-treasure-island",
     dates: "aug 2019 — jan 2020",
     location: "india · on-site",
     description: [

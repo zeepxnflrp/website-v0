@@ -1,5 +1,5 @@
 import React from "react";
-import me from "./static/me.jpg";
+import me from "./static/me-soft.jpg";
 
 function AboutMe() {
     return (

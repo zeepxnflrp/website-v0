@@ -32,7 +32,7 @@ function Experience({ fullPage = false }) {
             </div>
             <div className="experience-copy">
               <h3>{experience.role}</h3>
-              <p className="experience-company">{experience.company}</p>
+              <a className="experience-company" href={experience.companyUrl} target="_blank" rel="noreferrer">{experience.company}</a>
               {experience.description?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {experience.roles?.map((role) => (
                 <div className="nested-role" key={role.title}>
