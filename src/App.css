@@ -18,7 +18,7 @@ html {
   height: 100vh;
   scroll-behavior: smooth;
   overflow: auto;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 }
 
 .scroll-page {
@@ -26,6 +26,27 @@ html {
   height: 100vh;
   background-size:  cover;
   scroll-snap-align: start;
+}
+
+.universe-background {
+  background-color: transparent;
+}
+
+.starfield-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  .scroll-container {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
 }
 
 /* .App-logo {

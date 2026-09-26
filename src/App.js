@@ -1,104 +1,92 @@
-import React from "react";
-import Landing from "./Landing";
+import React, { useEffect } from "react";
+import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import AboutMe from "./AboutMe";
-import Projects from "./Projects";
+import ContactLinks from "./ContactLinks";
+import Education from "./Education";
 import Experience from "./Experience";
-// import Contact from "./Contact";
+import Landing from "./Landing";
+import ProjectsSection from "./ProjectsSection";
+import Skills from "./Skills";
+import Starfield from "./Starfield";
 import "./App.css";
-import StarfieldAnimation from "react-starfield-animation";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import "./Portfolio.css";
+
+function HomePage() {
+  return (
+    <>
+      <Landing />
+      <AboutMe />
+      <Education />
+      <Experience />
+      <ProjectsSection />
+      <Skills />
+      <ContactLinks />
+    </>
+  );
+}
+
+export function PortfolioRoutes() {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  useEffect(() => {
+    const scrollTarget = isHome ? location.state?.scrollTarget : null;
+    if (scrollTarget) {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.requestAnimationFrame(() => {
+        document.getElementById(scrollTarget)?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth" });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [isHome, location.key, location.state]);
+
+  return (
+    <div className="site-shell">
+      <Starfield
+        numParticles={800}
+        style={{ position: "fixed", inset: 0, width: "100%", height: "100%" }}
+      />
+      <header className="site-header">
+        <div className="header-inner">
+          <Link className="wordmark" to={isHome ? "#home" : "/"} aria-label="baani, back to home">baani<span aria-hidden="true">*</span></Link>
+          {isHome ? (
+            <nav className={`site-nav${isHome ? "" : " secondary-nav"}`} aria-label="main navigation">
+              <a href="#about">about</a>
+              <a href="#experience">experience</a>
+              <a href="#projects">projects</a>
+              <a href="#skills">skills</a>
+              <a href="#contact">contact</a>
+            </nav>
+          ) : (
+            <nav className="site-nav" aria-label="main navigation">
+              <Link to="/">home</Link>
+              <Link to="/experience">experience</Link>
+              <Link to="/projects">projects</Link>
+              <a href="https://github.com/zeepxnflrp" target="_blank" rel="noreferrer">github</a>
+              <a href="https://www.linkedin.com/in/baani-kaur-pasrija-84aa3216b/" target="_blank" rel="noreferrer">linkedin</a>
+            </nav>
+          )}
+        </div>
+      </header>
+      <main className={`page-main${isHome ? "" : " subpage-main"}`}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/experience" element={<div className="route-page"><Experience fullPage /></div>} />
+          <Route path="/projects" element={<div className="route-page"><ProjectsSection fullPage /></div>} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+      <footer className="site-footer">made with questionable amounts of screen time ♡</footer>
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div>
-      <StarfieldAnimation
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-        }}
-        numParticles={800}
-        particleSpeed={0}
-        dx={0.000000001} // x speed of stars in px/frame, default 0.05
-        dy={0.000000001}
-      />
-      <title>My Website</title>
-      <nav
-        className={`fixed z-10 flex min-w-full items-center justify-between py-4 px-4 backdrop-blur-[20px] backdrop-saturate-[1.8] backdrop-filter sm:px-10`}
-      >
-        <ul className="flex space-x-7">
-          <li>
-            <a href="#about-me">
-              <button className="hover:text-pink cursor-pointer">
-                &gt; whoami
-              </button>
-            </a>
-          </li>
-          <li>
-            <a href="#projects">
-              <button className="hover:text-pink cursor-pointer">
-                Projects
-              </button>
-            </a>
-          </li>
-          <li>
-            <a href="#experience">
-              <button className="hover:text-pink cursor-pointer">
-                Experience
-              </button>
-            </a>
-          </li>
-          {/* <li>
-            <a href="#contact">
-              <button className="hover:text-pink cursor-pointer">
-                Contact Me
-              </button>
-            </a>
-          </li> */}
-        </ul>
-        <ul className="flex space-x-4">
-          <li>
-            <a
-              href="https://github.com/zeepxnflrp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="hover:text-pink cursor-pointer"><FontAwesomeIcon icon={faGithub} style={{ color: '#ea7cbe' }} /></button>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/baani-kaur-pasrija-84aa3216b/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="hover:text-pink cursor-pointer">
-                <FontAwesomeIcon icon={faLinkedin} style={{ color: '#ea7cbe' }} />
-              </button>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <main className="pt-16 universe-background scroll-container">
-        <div className="center-content scroll-page" id="landing">
-          <Landing />
-        </div>
-        <div className="center-content scroll-page" id="about-me">
-          <AboutMe />
-        </div>
-        <div className="center-content scroll-page" id="projects">
-          <Projects />
-        </div>
-        <div className="center-content scroll-page" id="experience">
-          <Experience />
-        </div>
-        {/* <div className="center-content" id="contact">
-          <Contact />
-        </div> */}
-      </main>
-    </div>
+    <BrowserRouter>
+      <PortfolioRoutes />
+    </BrowserRouter>
   );
 }
 

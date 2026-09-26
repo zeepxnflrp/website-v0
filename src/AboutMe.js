@@ -1,37 +1,25 @@
-import React, { useEffect } from 'react';
-import './AboutMe.css';
-import me from './static/me.jpg';
+import React from "react";
+import me from "./static/me.jpg";
 
 function AboutMe() {
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("in-view");
-                }
-            });
-        }, { threshold: 0.1 }); 
-
-        const elements = document.querySelectorAll(".animate-text");
-        elements.forEach(el => observer.observe(el));
-
-        return () => elements.forEach(el => observer.unobserve(el));
-    }, []);
-
     return (
-        <div className="about-container mx-auto p-4 flex flex-col md:flex-row items-center justify-center gap-4">
-            <div className="flex justify-center">
-                <img src={me} alt="Baani" className="max-w-full h-auto shadow-lg border border-solid border-pink-500 animate-text w-1/2 md:w-3/4"/>
+        <section className="section-wrap content-section" id="about" aria-labelledby="about-title">
+            <div className="section-heading">
+                <p className="eyebrow">01 /</p>
+                <h2 id="about-title">a little bit about me</h2>
             </div>
-            <div className="text-center md:text-left p-8 md:pr-14">
-                <h1 className="text-2xl md:text-4xl font-bold mb-4 animate-text">Who's Baani?</h1>
-                <p className="text-base animate-text">
-                    I am a 22 year old software engineer, graduated from NYU. I'm interested in web development, 
-                    playing around with AI, and backend development. I mostly like working with Python and Javascript. When I'm not cooking something up, 
-                    I can be found playing Valorant, watching some cringe drama or pro gameplay, or experimenting with my hair and makeup.
-                </p>
+            <div className="about-layout">
+                <img className="about-photo" src={me} alt="Baani" />
+                <div className="about-copy">
+                      <div className="about-identity">
+                          <p className="about-identity-name">baani kaur pasrija</p>
+                      </div>
+                      <p>i'm interested in the parts of computer science where engineering meets creativity. i've worked on full-stack products, backend systems, games, ai-powered tools, music technology, and interactive experiences.</p>
+                      <p>i'm especially drawn to projects where i get to take something from “wouldn't it be cool if...” to an actual working thing... and then spend way too much time making the details feel right.</p>
+                      <p>outside of code, i care a lot about design, storytelling, games, visual art, music, and how people actually experience the things we build.</p>
+                </div>
             </div>
-        </div>
+        </section>
     );
 }
 

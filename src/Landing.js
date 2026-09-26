@@ -1,30 +1,20 @@
-import React, { useEffect } from 'react';
-import './Landing.css';
+import React from "react";
 
 function Landing() {
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("in-view");
-                }
-            });
-        }, { threshold: 0.1 }); // Adjust the threshold as needed
-
-        const elements = document.querySelectorAll(".animate-text");
-        elements.forEach(el => observer.observe(el));
-
-        // Cleanup function
-        return () => {
-            elements.forEach(el => observer.unobserve(el));
-        };
-    }, []);
-
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-7xl font-bold text-center mb-4 animate-text">Welcome to Baani's Digital Universe!</h1>
-            <p className="text-2xl text-center animate-text">Crafting Code & Conjuring Creativity</p>
-        </div>
+        <section className="hero section-wrap" id="home" aria-labelledby="hero-title">
+            <div className="hero-copy">
+                <p className="eyebrow">my universe</p>
+                <h1 id="hero-title">hi, i'm baani.</h1>
+                <p className="hero-intro">i'm a software engineer and computer science grad student at nyu, usually building somewhere around the intersection of software, ai, games, and interactive systems.</p>
+                <p className="hero-detail">i like making things that are useful, playful, or slightly strange, ideally all three.</p>
+                <div className="text-links hero-links">
+                    <a href="#projects">view my work <span aria-hidden="true">↘</span></a>
+                    <a href="https://github.com/zeepxnflrp" target="_blank" rel="noreferrer">github <span aria-hidden="true">↗</span></a>
+                    <a href="https://www.linkedin.com/in/baani-kaur-pasrija-84aa3216b/" target="_blank" rel="noreferrer">linkedin <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+        </section>
     );
 }
 

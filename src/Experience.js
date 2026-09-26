@@ -1,66 +1,54 @@
 import React from "react";
-import experienceData from "./data/experience.json";
-import "./Experience.css";
+import { Link } from "react-router-dom";
+import { experiences, initiallyVisibleExperiences } from "./data/experiences";
 
-function Experience() {
+function Experience({ fullPage = false }) {
+  const visibleExperiences = fullPage
+    ? [...experiences].sort((left, right) => right.sortDate.localeCompare(left.sortDate))
+    : experiences.slice(0, initiallyVisibleExperiences);
+
   return (
-    <div>
-      <section className="exp-container">
-        <div className="my-10 mx-auto px-4 h-full flex flex-col">
-          <h1 className="text-3xl md:text-4xl font-bold text-center mb-4 mt-10 md:mt-20">
-            My Experience </h1>
-          <div 
-            className="flex-1 overflow-y-auto"
-            style={{ maxHeight: "calc(100vh - 150px)" }} // adjust 150px to match header+padding height
-          >
-          <div className={`grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-4`}>
-          {experienceData.map((exp, index) => (
-            <div key={index} className="mb-2">
-              <div className="h-full w-full mx-auto max-w-screen-xl">
-                <div className="grid grid-cols-1 h-full p-4 md:p-8 md:pt-5">
-                <div className="flex flex-row items-center w-full">
-                  <div
-                    className="block rounded-xl bg-black border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-10 w-10 text-pink-500"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                      <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"
-                      />
-                    </svg>
-
-                    <h2 className="mt-4 text-xl font-bold text-white">
-                      {exp.role} - {exp.company}
-                    </h2>
-
-                    <p className="mt-1 text-l text-gray-300">
-                      {exp.duration}
-                    </p>
-
-                    <p className="mt-1 text-sm text-gray-300">
-                      {exp.description}
-                    </p>
+    <section className={`section-wrap content-section${fullPage ? " detail-page" : ""}`} id={fullPage ? "experience-archive-page" : "experience"} aria-labelledby={fullPage ? "experience-page-title" : "experience-title"}>
+      {fullPage ? (
+        <div className="detail-intro">
+          <Link className="back-home" to="/" state={{ scrollTarget: "experience" }}>← back home</Link>
+          <p className="eyebrow">experience / archive</p>
+          <h1 id="experience-page-title">the full lore</h1>
+          <p>everything i've done, in approximately chronological order.</p>
+        </div>
+      ) : (
+        <div className="section-heading">
+          <p className="eyebrow">03 /</p>
+          <h2 id="experience-title">where i've spent my time</h2>
+        </div>
+      )}
+      <div className="experience-list" id="experience-list">
+        {visibleExperiences.map((experience, index) => (
+          <article className="experience-entry" key={experience.id}>
+            <span className="entry-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+            <div className="experience-meta">
+              <p>{experience.dates}</p>
+              {experience.location && <p>{experience.location}</p>}
+            </div>
+            <div className="experience-copy">
+              <h3>{experience.role}</h3>
+              <p className="experience-company">{experience.company}</p>
+              {experience.description?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {experience.roles?.map((role) => (
+                <div className="nested-role" key={role.title}>
+                  <div className="nested-role-heading">
+                    <h4>{role.title}</h4>
+                    <span>{role.dates}</span>
                   </div>
+                  {role.description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 </div>
-              </div>
+              ))}
             </div>
-            </div>
-          ))}
-          </div>
-        </div>
-        </div>
-      </section>
-    </div>
+          </article>
+        ))}
+      </div>
+      {!fullPage && <Link className="expander" to="/experience">the full lore →</Link>}
+    </section>
   );
 }
 
